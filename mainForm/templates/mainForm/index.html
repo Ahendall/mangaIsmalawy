@@ -3,7 +3,7 @@
 <html lang="en">
 	<head id="head">
 		<meta charset="utf-8" />
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!-- Bootstrap Framework Imports -->
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -18,13 +18,6 @@
 		<script src="{% static 'script.js' %}"></script>
 
 		<title>مانجا اسمعلاوي</title>
-        <script>
-            if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-                document.getElementById("head").innerHTML += "<meta name="viewport" content="width=device-width, initial-scale=0.85" />";
-            } else {
-                document.getElementById("head").innerHTML += "<meta name="viewport" content="width=device-width, initial-scale=1" />";
-            }
-        </script>
 	</head>
 
 	<body>
@@ -55,8 +48,11 @@
 		</div>
 
 		<!-- Card where form will be stored -->
-
-		<div class="card formCard" style="width: 18rem">
+        {% if is_mobile %}
+		<div class="card formCard" style="width: 98%">
+        {% else %}
+        <div class="card formCard" style="width: 18rem">
+        {% endif %}
 			<div class="card innerFormCard">
 				<img
 					src="{% static 'images/mangos.jpg' %}"
@@ -131,11 +127,13 @@
 											class="input-group mb-3"
 											style="margin-top: 2%"
 										>
+                                            {% if not is_mobile %}
 											<span
 												class="input-group-text"
 												id="basic-addon1"
 												>كراتين</span
 											>
+                                            {% endif %}
 											<input
 												id="mango_3eweasy"
 												name="mango_3eweasy"
@@ -168,11 +166,13 @@
 											class="input-group mb-3"
 											style="margin-top: 2%"
 										>
-											<span
-												class="input-group-text"
-												id="basic-addon1"
-												>كراتين</span
-											>
+                                        {% if not is_mobile %}
+                                        <span
+                                            class="input-group-text"
+                                            id="basic-addon1"
+                                            >كراتين</span
+                                        >
+                                        {% endif %}
 											<input
 												id="mango_fas"
 												name="mango_fas"
@@ -205,11 +205,13 @@
 											class="input-group mb-3"
 											style="margin-top: 2%"
 										>
-											<span
-												class="input-group-text"
-												id="basic-addon1"
-												>كراتين</span
-											>
+                                        {% if not is_mobile %}
+                                        <span
+                                            class="input-group-text"
+                                            id="basic-addon1"
+                                            >كراتين</span
+                                        >
+                                        {% endif %}
 											<input
 												name="mango_sedekah"
 												id="mango_sedekah"

@@ -2,13 +2,30 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
 from django.views.decorators.csrf import csrf_protect
+import re
 import csv
 
 # Create your views here.
+
+def mobile(request):
+    """Return True if the request comes from a mobile device."""
+
+    MOBILE_AGENT_RE=re.compile(r".*(iphone|mobile|androidtouch)",re.IGNORECASE)
+
+    if MOBILE_AGENT_RE.match(request.META['HTTP_USER_AGENT']):
+        return True
+    else:
+        return False
+
+
+
 @csrf_protect
 def index(request):
     if request.method == "GET":
-        return render(request, "mainForm/index.html")
+        context = {
+            'is_mobile': (True if mobile(request) else False),
+        }
+        return render(request, "mainForm/index.html", context)
     
     elif request.method == "POST":
         # Get the form data
