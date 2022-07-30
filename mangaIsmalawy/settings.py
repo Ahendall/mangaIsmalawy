@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*-f#e_c&=^n!tgw0##ci_3m#9#q-+*3f30@4dhho%cjsp!(wjb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['manga-ismalawy.herokuapp.com']
+ALLOWED_HOSTS = ['manga-ismalawy.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -140,4 +140,4 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 RECIPIENT_ADDRESS1 = env('RECIPIENT_ADDRESS1')
 RECIPIENT_ADDRESS2 = env('RECIPIENT_ADDRESS2')
 
-CSRF_TRUSTED_ORIGINS = ['https://manga-ismalawy.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://manga-ismalawy.herokuapp.com', 'http://127.0.0.1:8000/']
