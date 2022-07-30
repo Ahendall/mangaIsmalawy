@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Bootstrap Framework Imports -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Custom Imports -->
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
+		<link rel="stylesheet" href="{% static 'styles.css' %}" />
+		<script src="{% static 'script.js' %}"></script>
+
+		<title>مانجا اسمعلاوي</title>
+	</head>
+
+	<body>
+		<!-- Navbar -->
+		<nav class="navbar sticky-top navbar-light navbar-expand-lg bg-custom">
+			<a
+				class="navbar-brand mb-0 h1 mx-auto"
+				style="font-size: 250%"
+				href="#"
+				>🥭&nbsp;&nbsp; مانجا اسمعلاوي &nbsp;&nbsp;🥭</a
+			>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</nav>
+        <h1 style="margin: 5%; text-align: center">!شكرا لطلبك</h1>
+        <h3 style="margin: 5%; text-align: center">ستتم إعادة توجيهك خلال 5 ثوانٍ</h3>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+			crossorigin="anonymous"
+		></script>
+        <script>
+            setTimeout(function(){
+                window.location.href = "{% url 'mainForm:index' %}";
+            }, 5000);
+        </script>
+	</body>
+</html>
